@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Dark teal theme (primary mode) */
+    --background: 22 5 195;
+    --foreground: 95 2 90;
+    --card: 24 4 195;
+    --card-foreground: 95 2 90;
+    --popover: 20 4 195;
+    --popover-foreground: 95 2 90;
+    --primary: 70 0.11 75;
+    --primary-foreground: 20 4 195;
+    --secondary: 27 4 195;
+    --secondary-foreground: 95 2 90;
+    --muted: 30 3 195;
+    --muted-foreground: 76 2 195;
+    --accent: 70 0.11 75;
+    --accent-foreground: 20 4 195;
+    --destructive: 55 0.22 25;
+    --destructive-foreground: 95 2 90;
+    --border: 34 4 195;
+    --input: 27 4 195;
+    --ring: 70 0.11 75;
+    --radius: 0.5rem;
+    /* Chart colors */
+    --chart-1: 70 0.11 75;
+    --chart-2: 60 0.14 195;
+    --chart-3: 55 0.1 155;
+    --chart-4: 65 0.12 35;
+    --chart-5: 50 0.09 85;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    background: linear-gradient(
+      160deg,
+      oklch(22% 0.05 195) 0%,
+      oklch(18% 0.03 195) 100%
+    );
+    min-height: 100vh;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: "Cinzel", serif;
+  }
+}
+
+@layer utilities {
+  .gold-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(75% 0.13 78) 0%,
+      oklch(62% 0.09 68) 100%
+    );
+  }
+  .teal-card {
+    background: oklch(24% 0.04 195);
+    border: 1px solid oklch(34% 0.04 195);
+  }
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(11, 20, 22, 0.7) 0%,
+      rgba(14, 36, 38, 0.65) 50%,
+      rgba(11, 20, 22, 0.85) 100%
+    );
+  }
+  .text-gold {
+    color: oklch(70% 0.11 75);
+  }
+  .bg-gold {
+    background-color: oklch(70% 0.11 75);
+  }
+  .border-gold {
+    border-color: oklch(70% 0.11 75);
+  }
+  .nav-link {
+    @apply text-xs tracking-widest uppercase font-medium transition-colors duration-200;
+    color: oklch(76% 0.02 195);
+  }
+  .nav-link:hover {
+    color: oklch(70% 0.11 75);
+  }
+  .section-title {
+    font-family: "Cinzel", serif;
+    @apply text-3xl md:text-4xl font-bold tracking-widest uppercase text-foreground;
+  }
+  .btn-gold {
+    background: linear-gradient(
+      135deg,
+      oklch(72% 0.12 78) 0%,
+      oklch(64% 0.1 70) 100%
+    );
+    color: oklch(18% 0.04 195);
+    @apply font-semibold transition-all duration-200;
+  }
+  .btn-gold:hover {
+    background: linear-gradient(
+      135deg,
+      oklch(78% 0.13 78) 0%,
+      oklch(70% 0.11 70) 100%
+    );
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(201, 162, 78, 0.3);
+  }
+}
